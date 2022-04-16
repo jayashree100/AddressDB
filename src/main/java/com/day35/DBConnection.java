@@ -8,7 +8,7 @@ import java.util.Enumeration;
 public class DBConnection {
     public static void main(String[] args) {
 
-        String jdbcURL = "jdbc:mysql://localhost:3306/Address_book_service?useSSL=false";
+        String jdbcURL = "jdbc:mysql://localhost:3306/AddressBook?useSSL=false";
         String userName = "root";
         String password = "Jaishree$123";
         Connection connection;

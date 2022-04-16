@@ -16,15 +16,15 @@ public class AddressBookServiceMainTest {
     public void givenAddressBookInDB_WhenRetrieved_ShouldMatchThePeopleCount() {
         AddressBookServiceMain addressBookService = new AddressBookServiceMain();
         List<AddressBookData> addressBookDataList = addressBookService.readAddressBookData(DB_IO);
-        assertEquals(3,addressBookDataList.size());
+        assertEquals(5,addressBookDataList.size());
     }
 
     @Test
     public void givenNewPhoneNumber_ShouldUpdateTheRecorAndSyncWithDataBase() throws AddressBookException {
         AddressBookServiceMain addressBookService = new AddressBookServiceMain();
         addressBookService.readAddressBookData(DB_IO);
-        addressBookService.updateRecord("sunil", " 9980565603");
-        boolean result = addressBookService.checkRecordSyncWithDB("sunil");
+        addressBookService.updateRecord("KAVYA", " 9980565606");
+        boolean result = addressBookService.checkRecordSyncWithDB("KAVYA");
         assertFalse(result);
     }
 
@@ -44,8 +44,8 @@ public class AddressBookServiceMainTest {
         AddressBookServiceMain addressBookService = new AddressBookServiceMain();
         addressBookService.readAddressBookData(DB_IO);
         Map<String, Double> contactsByCity = addressBookService.contactsByCity(DB_IO);
-        System.out.println(contactsByCity.containsKey("Belgaum")+" "+contactsByCity.containsValue(2.0));
-        assertFalse(contactsByCity.containsKey("Belgaum") &&
+        System.out.println(contactsByCity.containsKey("BIDAR")+" "+contactsByCity.containsValue(2.0));
+        assertFalse(contactsByCity.containsKey("BIDAR") &&
                 contactsByCity.containsValue(2.0));
     }
 
